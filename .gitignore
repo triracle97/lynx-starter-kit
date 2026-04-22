@@ -1,0 +1,19 @@
+node_modules/
+dist/
+.DS_Store
+
+# iOS
+ios/Pods/
+ios/build/
+ios/LynxTemplate/bundle/main.lynx.bundle
+ios/LynxTemplate.xcodeproj/
+*.xcuserstate
+xcuserdata/
+
+# Android
+android/.gradle/
+android/build/
+android/app/build/
+android/app/src/main/assets/main.lynx.bundle
+android/local.properties
+*.iml

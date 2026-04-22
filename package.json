@@ -1,0 +1,41 @@
+{
+  "name": "lynx-template",
+  "version": "0.0.1",
+  "private": true,
+  "packageManager": "pnpm@9.12.0",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "dev": "rspeedy dev",
+    "dev:web": "rspeedy dev --env web",
+    "dev:ip": "node scripts/dev-ip.cjs",
+    "build": "rspeedy build",
+    "build:native": "rspeedy build --env lynx",
+    "build:web": "rspeedy build --env web",
+    "embed": "node scripts/embed-bundle.cjs",
+    "release": "pnpm build && pnpm embed",
+    "lint": "eslint src",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@lynx-js/react": "^0.107.0",
+    "@lynx-js/web-core": "^0.15.0",
+    "react": "^18.3.0",
+    "react-router": "^7.1.0"
+  },
+  "devDependencies": {
+    "@lynx-js/react-rsbuild-plugin": "^0.10.0",
+    "@lynx-js/rspeedy": "^0.9.0",
+    "@testing-library/react": "^16.1.0",
+    "@types/react": "^18.3.0",
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.0.0",
+    "eslint": "^9.0.0",
+    "eslint-plugin-react": "^7.37.0",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "jsdom": "^25.0.0",
+    "prettier": "^3.3.0",
+    "typescript": "^5.6.0",
+    "vitest": "^2.1.0"
+  }
+}
