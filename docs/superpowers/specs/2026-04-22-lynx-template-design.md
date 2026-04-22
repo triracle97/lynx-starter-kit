@@ -125,8 +125,8 @@ Bundle outputs:
   "dev":          "rspeedy dev",
   "dev:ip":       "node scripts/dev-ip.cjs",
   "build":        "rspeedy build",
-  "build:native": "rspeedy build --env lynx",
-  "build:web":    "rspeedy build --env web",
+  "build:native": "rspeedy build --environment lynx",
+  "build:web":    "rspeedy build --environment web",
   "embed":        "node scripts/embed-bundle.cjs",
   "release":      "pnpm build && pnpm embed",
   "lint":         "eslint src",
@@ -294,7 +294,7 @@ web/
 Rely on rsbuild dev server's built-in live-reload (full page refresh on bundle change). True HMR for `<lynx-view>` is tracked upstream at <https://github.com/lynx-family/lynx-stack/issues/140>. README documents the gap and promises an upgrade when the feature ships.
 
 ### Dev command
-`pnpm rspeedy dev --env web` serves `:3001`.
+`pnpm rspeedy dev --environment web` serves `:3001`.
 
 ## 8. Dev Workflow
 
@@ -304,7 +304,7 @@ Rely on rsbuild dev server's built-in live-reload (full page refresh on bundle c
 | iOS device | Xcode run (Debug), edit `devHost` const | `http://<lan>:3000/main.lynx.bundle` |
 | Android emulator | Android Studio run (Debug) | `http://10.0.2.2:3000/main.lynx.bundle` |
 | Android device | Android Studio run (Debug), edit url const | `http://<lan>:3000/main.lynx.bundle` |
-| Web | `pnpm rspeedy dev --env web` | rspeedy dev server `:3001` |
+| Web | `pnpm rspeedy dev --environment web` | rspeedy dev server `:3001` |
 
 Prereq for all native targets: `pnpm dev` running (rspeedy native dev server). Port defaults to rspeedy's built-in (typically `:3000`); if the running rspeedy version picks a different port, update the `devHost`/`url` constants in `ViewController.swift` and `MainActivity.kt` accordingly.
 
@@ -373,12 +373,12 @@ README documents a single find/replace pass over these strings.
 - `pnpm build` (emits both bundles)
 - `cd ios && pod install && xcodebuild -scheme LynxTemplate -sdk iphonesimulator build`
 - `cd android && ./gradlew assembleDebug`
-- `rspeedy build --env web` (emits `dist/web/index.html`)
+- `rspeedy build --environment web` (emits `dist/web/index.html`)
 
 ### Manual runtime smoke
 - iOS simulator: app launches → "Hello Lynx" → tap link → counter works → back link returns.
 - Android emulator: same.
-- Web browser: `pnpm rspeedy dev --env web` → `http://localhost:3001` → same flow.
+- Web browser: `pnpm rspeedy dev --environment web` → `http://localhost:3001` → same flow.
 
 ## 13. README Outline
 
