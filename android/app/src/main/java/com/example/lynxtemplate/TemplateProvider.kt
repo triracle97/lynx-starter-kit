@@ -19,7 +19,8 @@ class TemplateProvider(private val ctx: Context) : AbsTemplateProvider() {
             inputStream.use { it.readBytes() }
           }
         } else {
-          ctx.assets.open("main.lynx.bundle").use { it.readBytes() }
+          val name = url.substringAfterLast('/').ifEmpty { "main.lynx.bundle" }
+          ctx.assets.open(name).use { it.readBytes() }
         }
         callback.onSuccess(bytes)
       } catch (t: Throwable) {
