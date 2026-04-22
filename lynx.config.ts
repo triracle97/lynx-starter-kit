@@ -13,7 +13,7 @@ export default defineConfig({
       output: {
         target: 'web',
         distPath: { root: './dist/web' },
-        copy: [{ from: './web/index.html', to: 'index.html' }],
+        copy: [{ from: './web/index.html', to: './' }],
       },
     },
   },
