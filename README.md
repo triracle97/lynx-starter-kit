@@ -28,7 +28,9 @@ cd ios && pod install && cd ..
 
 ## Dev loop
 
-In one terminal:
+See [docs/RUNNING.md](docs/RUNNING.md) for the full platform-by-platform guide (simulator, physical device, web) with troubleshooting.
+
+Quick version — in one terminal:
 
 ```bash
 pnpm dev          # rspeedy native dev server
