@@ -16,10 +16,10 @@ final class ViewController: UIViewController {
     let url = "embedded://main.lynx.bundle"
     #endif
 
-    let lynxView = LynxViewBuilder()
-      .setTemplateProvider(TemplateProvider())
-      .build()
-    lynxView.frame = view.bounds
+    let lynxView = LynxView { builder in
+      builder.templateResourceFetcher = TemplateProvider()
+      builder.frame = self.view.bounds
+    }
     lynxView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     view.addSubview(lynxView)
     lynxView.loadTemplate(fromURL: url, initData: nil)
