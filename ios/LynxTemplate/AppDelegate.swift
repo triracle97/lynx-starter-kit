@@ -11,7 +11,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     return true
   }
 
-  @available(iOS 13.0, *)
   func application(
     _ application: UIApplication,
     configurationForConnecting connectingSceneSession: UISceneSession,

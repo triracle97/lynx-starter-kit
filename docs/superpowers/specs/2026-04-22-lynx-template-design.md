@@ -10,7 +10,7 @@
 - Zero-to-running Lynx app on iOS, Android, and Web from a single `git clone`.
 - RN-like flat repo layout: `ios/`, `android/`, `web/`, `src/` at root.
 - Swift host on iOS, Kotlin host on Android.
-- Android 7.0+ (`minSdkVersion 24`); iOS 12+.
+- Android 7.0+ (`minSdkVersion 24`); iOS 13+.
 - ReactLynx (`@lynx-js/react`) for JS, `react-router` memory routing for navigation.
 - RN-style dev/release bundle loading: LAN dev server in Debug, embedded bundle in Release.
 - pnpm package manager.
@@ -154,7 +154,7 @@ ios/
 
 ### Podfile
 ```ruby
-platform :ios, '12.0'
+platform :ios, '13.0'
 target 'LynxTemplate' do
   use_frameworks!
   pod 'Lynx',               '3.6.0', subspecs: ['Framework']
