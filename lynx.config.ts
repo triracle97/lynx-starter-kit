@@ -8,5 +8,13 @@ export default defineConfig({
   },
   environments: {
     lynx: {},
+    web: {
+      source: { entry: { main: './web/main.ts' } },
+      output: {
+        target: 'web',
+        distPath: { root: './dist/web' },
+        copy: [{ from: './web/index.html', to: 'index.html' }],
+      },
+    },
   },
 })
