@@ -5,6 +5,8 @@ dist/
 # iOS
 ios/Pods/
 ios/build/
+ios/vendor/bundle/
+ios/.bundle/
 ios/LynxTemplate/bundle/main.lynx.bundle
 ios/LynxTemplate.xcodeproj/
 ios/LynxTemplate.xcworkspace/

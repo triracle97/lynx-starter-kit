@@ -1,5 +1,8 @@
 export const center = {
-  flex: 1,
+  width: '100%' as const,
+  height: '100%' as const,
+  display: 'flex' as const,
+  flexDirection: 'column' as const,
   alignItems: 'center' as const,
   justifyContent: 'center' as const,
 }

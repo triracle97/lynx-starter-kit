@@ -6,7 +6,8 @@ RN-style starter for building Lynx apps on iOS, Android (7+), and Web from one c
 
 - Node 20 (`nvm use`)
 - pnpm 9 (`corepack enable`)
-- Xcode 15+ and CocoaPods ≥ 1.11.3 (`brew install cocoapods xcodegen`)
+- Xcode 15+ and xcodegen (`brew install xcodegen`)
+- Ruby 3.x + Bundler (CocoaPods installed per-project via `bundle install`)
 - Android Studio Hedgehog+ with API 34 SDK and an API 24+ emulator
 - JDK 17
 
@@ -23,8 +24,14 @@ RN-style starter for building Lynx apps on iOS, Android (7+), and Web from one c
 
 ```bash
 pnpm install
-cd ios && pod install && cd ..
+cd ios
+xcodegen generate          # creates LynxTemplate.xcodeproj from project.yml
+bundle install             # installs CocoaPods into ios/vendor/bundle
+bundle exec pod install
+cd ..
 ```
+
+`bundle exec pod install` pins CocoaPods to the version in `ios/Gemfile.lock`, so every contributor resolves the same dependency graph. Re-run it any time `Podfile` or `Gemfile` changes.
 
 ## Dev loop
 

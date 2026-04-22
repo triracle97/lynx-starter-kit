@@ -9,15 +9,19 @@ All four targets share a single JS build pipeline (rspeedy) and a single ReactLy
 | Node 20 | everything | `nvm use` (reads `.nvmrc`) |
 | pnpm 9 | everything | `corepack enable` |
 | Xcode 15+ | iOS | App Store |
-| CocoaPods ≥ 1.11.3 | iOS | `brew install cocoapods` |
 | xcodegen | iOS | `brew install xcodegen` |
+| Ruby 3.x + Bundler | iOS | `gem install bundler` (CocoaPods comes via `bundle install`) |
 | JDK 17 | Android | `brew install openjdk@17` |
 | Android Studio Hedgehog+ + API 34 SDK + API 24+ emulator | Android | Google |
 
 Then:
 ```bash
 pnpm install
-cd ios && pod install && cd ..
+cd ios
+xcodegen generate          # generates LynxTemplate.xcodeproj from project.yml
+bundle install             # pins CocoaPods version from Gemfile.lock
+bundle exec pod install
+cd ..
 ```
 
 ## The one command that feeds all native targets
@@ -150,7 +154,7 @@ The dev command IS the release build. Deploy `dist/web/` to any static host (Net
 Check the port rspeedy actually bound to (first few lines of its output). If it's not `:3000`, update `devPort` in `ViewController.swift` and the URL in `MainActivity.kt`.
 
 **iOS simulator build fails with `sandbox is not in sync with the Podfile.lock`**
-Usually means Pods drifted. Fix: `cd ios && pod install && cd ..` then rebuild.
+Usually means Pods drifted. Fix: `cd ios && bundle exec pod install && cd ..` then rebuild.
 
 **Android build fails with `invalid Java home`**
 JDK 17 needs to be on PATH for Gradle. Either:
