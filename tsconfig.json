@@ -15,6 +15,6 @@
     "forceConsistentCasingInFileNames": true,
     "noEmit": true
   },
-  "include": ["src", "web", "scripts", "vitest.config.ts", "lynx.config.ts"],
+  "include": ["src", "web", "vitest.config.ts", "lynx.config.ts"],
   "exclude": ["node_modules", "dist", "android", "ios"]
 }

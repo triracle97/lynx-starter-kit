@@ -21,6 +21,9 @@ importers:
         specifier: ^6.28.0
         version: 6.30.3(react@17.0.2)
     devDependencies:
+      '@eslint/js':
+        specifier: ^9.0.0
+        version: 9.39.4
       '@lynx-js/react-rsbuild-plugin':
         specifier: ^0.10.0
         version: 0.10.14(@lynx-js/react@0.107.1(@types/react@17.0.91))(webpack@5.106.2)

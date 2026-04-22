@@ -7,6 +7,7 @@ ios/Pods/
 ios/build/
 ios/LynxTemplate/bundle/main.lynx.bundle
 ios/LynxTemplate.xcodeproj/
+ios/LynxTemplate.xcworkspace/
 *.xcuserstate
 xcuserdata/
 
