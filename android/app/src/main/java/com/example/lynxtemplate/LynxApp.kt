@@ -12,7 +12,7 @@ class LynxApp : Application() {
     super.onCreate()
     LynxEnv.inst().init(this, null, null, null)
     LynxServiceCenter.inst().registerService(LynxImageService.getInstance())
-    LynxServiceCenter.inst().registerService(LynxLogService.getInstance())
-    LynxServiceCenter.inst().registerService(LynxHttpService.getInstance())
+    LynxServiceCenter.inst().registerService(LynxLogService)
+    LynxServiceCenter.inst().registerService(LynxHttpService)
   }
 }
