@@ -16,7 +16,7 @@ export default [
       globals: { ...globals.browser, ...globals.node },
     },
     plugins: { '@typescript-eslint': tsPlugin, react, 'react-hooks': reactHooks },
-    settings: { react: { version: '18' } },
+    settings: { react: { version: '17' } },
     rules: {
       ...tsPlugin.configs.recommended.rules,
       ...react.configs.recommended.rules,

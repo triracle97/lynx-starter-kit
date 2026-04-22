@@ -88,14 +88,15 @@ Create `package.json`:
   "dependencies": {
     "@lynx-js/react": "^0.107.0",
     "@lynx-js/web-core": "^0.15.0",
-    "react": "^18.3.0",
-    "react-router": "^7.1.0"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router": "^6.28.0"
   },
   "devDependencies": {
     "@lynx-js/react-rsbuild-plugin": "^0.10.0",
     "@lynx-js/rspeedy": "^0.9.0",
-    "@testing-library/react": "^16.1.0",
-    "@types/react": "^18.3.0",
+    "@testing-library/react": "^12.1.5",
+    "@types/react": "^17.0.0",
     "@typescript-eslint/eslint-plugin": "^8.0.0",
     "@typescript-eslint/parser": "^8.0.0",
     "eslint": "^9.0.0",
@@ -219,7 +220,7 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
   ],
-  settings: { react: { version: '18' } },
+  settings: { react: { version: '17' } },
   rules: {
     'react/react-in-jsx-scope': 'off',
     '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
